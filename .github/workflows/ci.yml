@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_linux_static:
+    name: x64-linux
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            core.exportVariable('ACTIONS_CACHE_URL', process.env.ACTIONS_CACHE_URL || '');
+            core.exportVariable('ACTIONS_RUNTIME_TOKEN', process.env.ACTIONS_RUNTIME_TOKEN || '');
+      - name: Bootstrap vcpkg
+        run: ./vcpkg/bootstrap-vcpkg.sh
+      - name: Install ports
+        run: |
+          ./vcpkg/vcpkg install --binarysource="clear;x-gha,readwrite" --triplet=x64-linux
+
+  build_linux_dynamic:
+    name: x64-linux-dynamic
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            core.exportVariable('ACTIONS_CACHE_URL', process.env.ACTIONS_CACHE_URL || '');
+            core.exportVariable('ACTIONS_RUNTIME_TOKEN', process.env.ACTIONS_RUNTIME_TOKEN || '');
+      - name: Bootstrap vcpkg
+        run: ./vcpkg/bootstrap-vcpkg.sh
+      - name: Install ports
+        run: |
+          ./vcpkg/vcpkg install --binarysource="clear;x-gha,readwrite" --triplet=x64-linux-dynamic
