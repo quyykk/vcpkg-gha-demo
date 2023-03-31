@@ -10,7 +10,7 @@ jobs:
     name: x64-linux
     runs-on: ubuntu-22.04
     env:
-      VCPKG_TARGET_TRIPLET: x64-linux
+      VCPKG_DEFAULT_TRIPLET: x64-linux
     steps:
       - uses: actions/checkout@v3
         with:
@@ -23,7 +23,7 @@ jobs:
     name: x64-linux-dynamic
     runs-on: ubuntu-22.04
     env:
-      VCPKG_TARGET_TRIPLET: x64-linux-dynamic
+      VCPKG_DEFAULT_TRIPLET: x64-linux-dynamic
     steps:
       - uses: actions/checkout@v3
         with:
