@@ -2,5 +2,12 @@
   "dependencies": [
 	"sdl2",
 	"openal-soft"
+  ],
+  "builtin-baseline": "c9f906558f9bb12ee9811d6edc98ec9255c6cda5",
+  "overrides": [
+	{
+      "name": "sdl2",
+	  "version": "2.24.0"
+	}
   ]
 }
