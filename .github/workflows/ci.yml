@@ -6,11 +6,11 @@ on:
       - master
 
 jobs:
-  build_linux:
-    name: x64-linux
-    runs-on: ubuntu-22.04
+  build:
+    name: Build
+    runs-on: windows-2022
     env:
-      VCPKG_DEFAULT_TRIPLET: x64-linux-release
+      VCPKG_DEFAULT_TRIPLET: x64-windows-static-release
     steps:
       - uses: actions/checkout@v3
       - uses: lukka/run-vcpkg@v11
