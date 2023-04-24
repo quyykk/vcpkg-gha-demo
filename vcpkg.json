@@ -1,13 +1,12 @@
 {
   "dependencies": [
-	"sdl2",
-	"openal-soft"
-  ],
-  "builtin-baseline": "c9f906558f9bb12ee9811d6edc98ec9255c6cda5",
-  "overrides": [
-	{
-      "name": "sdl2",
-	  "version": "2.24.0"
+    {
+      "name": "llvm",
+      "default-features": false,
+      "features": [
+        "default-options"
+       ]
 	}
-  ]
+  ],
+  "builtin-baseline": "b3e0a1e625a0cc00073efb763e39088e5b75939e"
 }

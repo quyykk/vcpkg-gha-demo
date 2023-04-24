@@ -9,9 +9,11 @@ jobs:
   build_linux:
     name: x64-linux
     runs-on: ubuntu-22.04
+    env:
+      VCPKG_DEFAULT_TRIPLET: x64-linux-release
     steps:
       - uses: actions/checkout@v3
       - uses: lukka/run-vcpkg@v11
         with:
-          vcpkgGitCommitId: c9f906558f9bb12ee9811d6edc98ec9255c6cda5
+          vcpkgGitCommitId: b3e0a1e625a0cc00073efb763e39088e5b75939e
           runVcpkgInstall: true
