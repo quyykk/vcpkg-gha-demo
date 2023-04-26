@@ -8,12 +8,13 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: windows-2022
+    runs-on: ubuntu-22.04
     env:
-      VCPKG_DEFAULT_TRIPLET: x64-windows-static-release
+      VCPKG_DEFAULT_TRIPLET: x64-linux-release
     steps:
       - uses: actions/checkout@v3
       - uses: lukka/run-vcpkg@v11
         with:
           vcpkgGitCommitId: b3e0a1e625a0cc00073efb763e39088e5b75939e
-          runVcpkgInstall: true
+      - run: cp vcpkg-tool vcpkg/
+      - run: vcpkg install

@@ -1,12 +1,6 @@
 {
   "dependencies": [
-    {
-      "name": "llvm",
-      "default-features": false,
-      "features": [
-        "default-options"
-       ]
-	}
+	  "qt5-declarative"
   ],
   "builtin-baseline": "b3e0a1e625a0cc00073efb763e39088e5b75939e"
 }
