@@ -16,5 +16,5 @@ jobs:
       - uses: lukka/run-vcpkg@v11
         with:
           vcpkgGitCommitId: b3e0a1e625a0cc00073efb763e39088e5b75939e
-      - run: cp vcpkg-tool vcpkg/
+      - run: cp vcpkg-tool vcpkg/vcpkg
       - run: vcpkg install
