@@ -1,6 +1,10 @@
 {
   "dependencies": [
-    "qt5-tools"
+    {
+      "name": "qt5",
+	  "features": ["all"]
+    }
   ],
   "builtin-baseline": "b3e0a1e625a0cc00073efb763e39088e5b75939e"
 }
+
