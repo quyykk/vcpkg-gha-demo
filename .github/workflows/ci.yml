@@ -16,5 +16,5 @@ jobs:
           vcpkgGitCommitId: b3e0a1e625a0cc00073efb763e39088e5b75939e
       - run: cp vcpkg-tool vcpkg/vcpkg
       - run: sudo apt-get install libgl1-mesa-dev libglu1-mesa-dev '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf-archive libxxf86vm-dev nasm
-      - run: vcpkg install --triplet=x64-linux-release --host-triplet=x64-linux-release
+      - run: vcpkg install #--triplet=x64-linux-release --host-triplet=x64-linux-release
       - run: tree vcpkg/buildtrees/
